@@ -1,0 +1,28 @@
+<div class="paginator">
+  <div class="paginator__info">
+    <h4>Страница {{ currentPage }} из {{ maxPage }}</h4>
+    <p>Элементов: {{ collectionLength }}</p>
+  </div>
+
+  <button
+    class="paginator__btn"
+    type="button"
+    [disabled]="currentPage === 1"
+    (click)="decrement()"
+  >
+    <svg class="paginator__icon">
+      <use href="assets/images/sprite.svg#icon-arrow-left"></use>
+    </svg>
+  </button>
+
+  <button
+    class="paginator__btn"
+    type="button"
+    [disabled]="currentPage >= maxPage"
+    (click)="increment()"
+  >
+    <svg class="paginator__icon">
+      <use href="assets/images/sprite.svg#icon-arrow-right"></use>
+    </svg>
+  </button>
+</div>

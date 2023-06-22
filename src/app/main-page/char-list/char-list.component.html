@@ -1,0 +1,33 @@
+<main class="container">
+  <app-header></app-header>
+
+  <div class="logo__wrapper">
+    <img
+      class="logo__img"
+      src="assets/images/logo.png"
+      alt="rick-and-morty-logo"
+    />
+  </div>
+
+  <app-input-search></app-input-search>
+
+  <div *ngIf="slicedData.length; else noResults" class="char__wrapper">
+    <app-char-item
+      [charItem]="item"
+      *ngFor="let item of slicedData"
+    ></app-char-item>
+  </div>
+
+  <ng-template #noResults>
+    <div class="char__no-results">
+      <p>Поиск не дал результатов...</p>
+    </div>
+  </ng-template>
+
+  <app-pagination
+    *ngIf="slicedData"
+    [itemsPerPage]="8"
+    [inputData]="data"
+    (OutputEmit)="setDataForCurrent($event)"
+  ></app-pagination>
+</main>

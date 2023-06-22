@@ -1,0 +1,18 @@
+@import "./styles/reset.scss";
+@import "./styles/variables.scss";
+@import "./styles/typography.scss";
+
+@media (min-width: 320px) {
+  .container {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0;
+    padding-bottom: 40px;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
